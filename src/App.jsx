@@ -3,6 +3,7 @@ import './App.css'
 import Layout from './components/Layout/Layout'
 import StoreContextProvider from './components/Context/Context'
 import Products from './components/Products/Products'
+import ProductDetails from './components/ProductDetails/ProductDetails'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     {
       path: "/", element: <Layout />,
       children: [
-        { index: true, element: <Products /> }
+        { index: true, element: <Products /> },
+        { path: '/:ProductDetails/:id', element: <ProductDetails /> },
       ]
     }
   ])
