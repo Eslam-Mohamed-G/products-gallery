@@ -1,12 +1,16 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
-import NavBar from './components/NavBar/NavBar'
+import Layout from './components/Layout/Layout'
 
 function App() {
-  
+
+  const routes = createBrowserRouter([
+    {path: "/", element: <Layout/>}
+  ])
 
   return (
     <main className='dark:bg-black bg-red-500'>
-      <NavBar/>
+      <RouterProvider router = {routes}/>
     </main>
   )
 }
