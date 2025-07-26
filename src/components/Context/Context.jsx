@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 export const dataContext = createContext();
 
@@ -26,28 +27,23 @@ export default function StoreContextProvider({ children }) {
     };
 
     // Function to fetch product details from Fake Store API
-    const [id, setId] = useState(null);
-    const [productDetails, setProductDetails] = useState([]);
-    async function getProductDetails() {
+    const [productDetails, setProductDetails] = useState({});
+    async function getProductDetails(id) {
         setLoading(true);
         setErrorMessage("");
         try {
             const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
             setProductDetails(response.data);
-            console.log(response.data);
+            console.log(productDetails);
         } catch (error) {
-            setErrorMessage("error");
+            setErrorMessage("Error fetching product details");
         } finally {
             setLoading(false);
         }
     };
 
-    useEffect(() => {
-        getProductDetails();
-    }, [id]);
-
     return (
-        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, setId}}>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails}}>
             {children}
         </dataContext.Provider>
     )

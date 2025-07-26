@@ -36,7 +36,7 @@ export default function Products() {
                 <div className="flex flex-row flex-wrap justify-center">
                     {products.map((product) => (
                         <div className="w-1/2 md:w-1/3 lg:w-1/4 p-2 md:p-4" key={product.id}>
-                            <div onClick={()=>{navigate(`/${product.title.split(' ').slice(0, 3).join(" ")}/${product.id}`); setId(product.id)}} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-80 md:h-96 pt-4 cursor-pointer">
+                            <div onClick={()=>{navigate(`/${product.title.split(' ').slice(0, 3).join(" ")}/${product.id}`)}} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-80 md:h-96 pt-4 cursor-pointer">
                                 <div className='w-2/3 h-1/2 sm:h-2/3 m-auto bg-transparent'>
                                     <img className="object-contain w-full h-full" src={product.image} alt="product image" />
                                 </div>
