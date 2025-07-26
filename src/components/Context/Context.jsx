@@ -6,7 +6,7 @@ export default function StoreContextProvider({ children }) {
     const [loading, setLoading] = useState(false);
     
     // State to store the error message (if any)
-    const [errorMessage, seterrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     return (
         <dataContext.Provider>
             {children}
