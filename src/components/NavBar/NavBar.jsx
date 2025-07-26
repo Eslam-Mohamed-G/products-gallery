@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react'
+import { dataContext } from '../Context/Context';
 
 export default function NavBar() {
+    const {getAllProducts,products} = useContext(dataContext);
     const [mode, setMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
@@ -16,6 +18,7 @@ export default function NavBar() {
 
     useEffect(() => {
         document.querySelector("html").classList.toggle("dark", mode);
+        getAllProducts();
     }, [mode]);
 
     return (
