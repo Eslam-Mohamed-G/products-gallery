@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const dataContext = createContext();
 
@@ -25,8 +25,29 @@ export default function StoreContextProvider({ children }) {
         }
     };
 
+    // Function to fetch product details from Fake Store API
+    const [id, setId] = useState(null);
+    const [productDetails, setProductDetails] = useState([]);
+    async function getProductDetails() {
+        setLoading(true);
+        setErrorMessage("");
+        try {
+            const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+            setProductDetails(response.data);
+            console.log(response.data);
+        } catch (error) {
+            setErrorMessage("error");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getProductDetails();
+    }, [id]);
+
     return (
-        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products}}>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, setId}}>
             {children}
         </dataContext.Provider>
     )
