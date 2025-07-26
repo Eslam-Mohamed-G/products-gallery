@@ -33,7 +33,7 @@ export default function ProductDetails() {
                 </div>
             }
 
-            {errorMessage && <ErrorPage/>}
+            {errorMessage && <ErrorPage onRetry={getProductDetails(id)}/>}
 
             {!loading && !errorMessage && productDetails && (
                 <div className="flex flex-col items-center md:px-4 bg-white border border-gray-200 rounded-none md:rounded-lg shadow-sm md:flex-row md:min-w-xl lg:max-w-6xl dark:border-gray-700 dark:bg-gray-800 dark:text-white">
