@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout'
 import StoreContextProvider from './components/Context/Context'
 import Products from './components/Products/Products'
 import ProductDetails from './components/ProductDetails/ProductDetails'
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       children: [
         { index: true, element: <Products /> },
         { path: '/:ProductDetails/:id', element: <ProductDetails /> },
+        { path: '*', element: <NotFound /> },
       ]
     }
   ])
