@@ -35,7 +35,7 @@ export default function ProductDetails() {
             {errorMessage && <p>notFound</p>}
 
             {!loading && !errorMessage && productDetails && (
-                <div className="flex flex-col items-center bg-white border border-gray-200 rounded-none md:rounded-lg shadow-sm md:flex-row md:min-w-xl lg:max-w-6xl dark:border-gray-700 dark:bg-gray-800 dark:text-white">
+                <div className="flex flex-col items-center md:px-4 bg-white border border-gray-200 rounded-none md:rounded-lg shadow-sm md:flex-row md:min-w-xl lg:max-w-6xl dark:border-gray-700 dark:bg-gray-800 dark:text-white">
                     {/* image */}
                     <div className="w-3xs md:w-1/4 my-1 overflow-hidden rounded-2xl">
                         <img className="w-full object-contain" src={productDetails.image} alt='product image' />

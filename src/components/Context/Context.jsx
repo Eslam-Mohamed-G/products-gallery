@@ -34,7 +34,6 @@ export default function StoreContextProvider({ children }) {
         try {
             const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
             setProductDetails(response.data);
-            console.log(productDetails);
         } catch (error) {
             setErrorMessage("Error fetching product details");
         } finally {
