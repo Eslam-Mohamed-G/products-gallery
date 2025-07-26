@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const dataContext = createContext();
 
@@ -23,9 +23,9 @@ export default function StoreContextProvider({ children }) {
             setLoading(false);
         }
     };
-    
+
     return (
-        <dataContext.Provider>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products}}>
             {children}
         </dataContext.Provider>
     )
