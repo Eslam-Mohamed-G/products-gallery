@@ -4,9 +4,11 @@ import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
   return (
-    <main className='bg-white dark:bg-black h-screen'>
-        <NavBar/>
-        <Outlet/>
+    <main className='bg-white dark:bg-black min-h-screen'>
+      <NavBar />
+      <div className='content-center h-full pt-20'>
+        <Outlet />
+      </div>
     </main>
   )
 }
