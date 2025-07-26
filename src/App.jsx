@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout/Layout'
+import StoreContextProvider from './components/Context/Context'
 
 function App() {
 
@@ -9,9 +10,9 @@ function App() {
   ])
 
   return (
-    <main className='dark:bg-black bg-red-500'>
-      <RouterProvider router = {routes}/>
-    </main>
+    <StoreContextProvider>
+      <RouterProvider router={routes} />
+    </StoreContextProvider>
   )
 }
 
