@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { dataContext } from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
+import ErrorPage from '../errorPage/errorPage';
 
 export default function Products() {
     const { getAllProducts, loading, errorMessage, products, setId } = useContext(dataContext);
@@ -37,7 +38,7 @@ export default function Products() {
                 </div>
             }
 
-            {errorMessage && <h1>notFound</h1>}
+            {errorMessage && <ErrorPage onRetry={getAllProducts}/>}
 
             {!loading && !errorMessage && (
                 <div className="flex flex-row flex-wrap justify-center">

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { dataContext } from '../Context/Context';
 import { useParams } from 'react-router-dom';
+import ErrorPage from '../errorPage/errorPage';
 
 export default function ProductDetails() {
     const { id } = useParams();
@@ -32,7 +33,7 @@ export default function ProductDetails() {
                 </div>
             }
 
-            {errorMessage && <p>notFound</p>}
+            {errorMessage && <ErrorPage/>}
 
             {!loading && !errorMessage && productDetails && (
                 <div className="flex flex-col items-center md:px-4 bg-white border border-gray-200 rounded-none md:rounded-lg shadow-sm md:flex-row md:min-w-xl lg:max-w-6xl dark:border-gray-700 dark:bg-gray-800 dark:text-white">
