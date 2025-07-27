@@ -1,12 +1,47 @@
-# React + Vite
+# Products Gallery Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a responsive **Products Gallery** web application built with **React** and **Context API**.  
+The app fetches products from [Fake Store API](https://fakestoreapi.com/) and allows:
+- Product browsing and details.
+- Search by product name.
+- Sort by **Price (Low to High / High to Low)** and **Name (A–Z)**.
+- Dark/Light mode toggle.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **React (v18+)** with functional components.
+- **Context API** for state management.
+- **Axios** for API requests.
+- **Tailwind CSS** for responsive design.
+- Search with `Enter` or search icon.
+- Sort dropdown (Price & Name).
+- Dark/Light mode with local storage.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+- **React**
+- **React Router DOM**
+- **Axios**
+- **Tailwind CSS**
+- **Fake Store API**
+
+---
+
+## Screenshots
+<p align="center">
+  <img src="./public/preview-1.png" width="45%" />
+  <img src="./public/preview-2.png" width="45%" />
+</p>
+<p align="center">
+  <img src="./public/preview-3.png" width="75%" />
+</p>
+
+---
+
+## Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/products-gallery.git
