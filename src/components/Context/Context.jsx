@@ -41,6 +41,9 @@ export default function StoreContextProvider({ children }) {
         }
     };
 
+    // handle search bar
+    const [searchTerm, setSearchTerm] = useState("");
+
     return (
         <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails}}>
             {children}
