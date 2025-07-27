@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
     const location = useLocation();
-    const { searchTerm, handleSearch } = useContext(dataContext);
+    const { setSearchTerm, handleSearch } = useContext(dataContext);
     const searchInputRef = useRef(null);
     const [mode, setMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
@@ -26,7 +26,7 @@ export default function NavBar() {
             handleSearch(term);
         }
     };
-    
+
     // Search when clicking on the search icon
     const handleSearchClick = () => {
         const term = searchInputRef.current.value.trim();
@@ -40,7 +40,7 @@ export default function NavBar() {
     return (
         <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 shadow">
             <div className="flex flex-wrap items-center justify-between py-4 ps-6 pr-2 md:pr-4 md:ps-8">
-                <Link to="/" className="flex items-center">
+                <Link to="/"  onClick={() => setSearchTerm("")}className="flex items-center">
                     <span className="text-lg sm:text-2xl font-bold dark:text-white uppercase">products</span>
                 </Link>
 
