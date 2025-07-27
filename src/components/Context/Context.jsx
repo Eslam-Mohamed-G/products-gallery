@@ -51,8 +51,17 @@ export default function StoreContextProvider({ children }) {
     // Filtered products (case-insensitive)
     const filteredProducts = products.filter( product => product.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
+    // handle Sort Dropdown:
+    const [sortOption, setSortOption] = useState("");
+    const sortedProducts = [...filteredProducts].sort((a, b) => {
+        if (sortOption === "price-low") return a.price - b.price;
+        if (sortOption === "price-high") return b.price - a.price;
+        if (sortOption === "name-az") return a.title.localeCompare(b.title);
+        if (sortOption === "name-za") return b.title.localeCompare(a.title);
+        return 0;
+    });
     return (
-        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts}}>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts, sortedProducts, setSortOption }}>
             {children}
         </dataContext.Provider>
     )
