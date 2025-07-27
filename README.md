@@ -36,7 +36,7 @@ The app fetches products from [Fake Store API](https://fakestoreapi.com/) and al
   <img src="./public/preview-2.png" width="45%" />
 </p>
 <p align="center">
-  <img src="./public/preview-3.png" width="75%" />
+  <img src="./public/preview-3.png" width="45%" />
 </p>
 
 ---
