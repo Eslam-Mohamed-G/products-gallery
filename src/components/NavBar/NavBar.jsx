@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useEffect, useState } from 'react'
 import { dataContext } from '../Context/Context';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
     const location = useLocation();
-    const { searchTerm, setSearchTerm } = useContext(dataContext);
+    const { searchTerm, handleSearch } = useContext(dataContext);
+    const searchInputRef = useRef(null);
     const [mode, setMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
@@ -16,6 +17,14 @@ export default function NavBar() {
             localStorage.setItem("theme", newMode ? "dark" : "light");
             return newMode;
         });
+    };
+
+    // when click on enter handle search
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            const term = searchInputRef.current.value.trim();
+            handleSearch(term);
+        }
     };
 
     useEffect(() => {
@@ -40,8 +49,8 @@ export default function NavBar() {
                         <input
                             type="text"
                             id="search-navbar"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
+                            ref={searchInputRef}
+                            onKeyDown={handleKeyDown}
                             className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none"
                             placeholder="Search..."
                         />
