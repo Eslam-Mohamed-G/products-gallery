@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
     const location = useLocation();
-    const { getAllProducts, products } = useContext(dataContext);
+    const { searchTerm, setSearchTerm } = useContext(dataContext);
     const [mode, setMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
@@ -20,7 +20,6 @@ export default function NavBar() {
 
     useEffect(() => {
         document.querySelector("html").classList.toggle("dark", mode);
-        getAllProducts();
     }, [mode]);
 
     return (
@@ -38,7 +37,14 @@ export default function NavBar() {
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="text" id="search-navbar" className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none" placeholder="Search..." />
+                        <input
+                            type="text"
+                            id="search-navbar"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none"
+                            placeholder="Search..."
+                        />
                     </div>
 
                     {/* button for dark mode */}

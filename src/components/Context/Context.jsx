@@ -48,7 +48,7 @@ export default function StoreContextProvider({ children }) {
     const filteredProducts = products.filter( product => product.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
-        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, setSearchTerm, filteredProducts}}>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, setSearchTerm, searchTerm, filteredProducts}}>
             {children}
         </dataContext.Provider>
     )
