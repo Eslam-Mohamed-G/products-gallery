@@ -74,8 +74,12 @@ export default function Products() {
                                             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{product.title.split(' ').slice(0, 3).join(" ")}</h5>
                                             <div className="flex flex-wrap items-center justify-between mt-2.5 mb-5">
                                                 <div className='flex items-center justify-center'>
-                                                    <span className="text-yellow-400">★★★★</span>
-                                                    <span className="text-gray-300">★</span>
+                                                    <span
+                                                        className="star-rating"
+                                                        style={{'--rating-percent': `${(product.rating.rate / 5) * 100}%`}}
+                                                    >
+                                                        ★★★★★
+                                                    </span>
                                                     <span className="bg-blue-100 text-blue-800 text-[10px] font-semibold px-2 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-1">{product.rating.rate}</span>
                                                 </div>
                                                 <span className="text-lg md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">${product.price}</span>

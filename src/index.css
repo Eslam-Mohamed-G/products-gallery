@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+.star-rating {
+    color: transparent;
+    background: linear-gradient(90deg,
+            gold var(--rating-percent),
+            lightgray var(--rating-percent));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
