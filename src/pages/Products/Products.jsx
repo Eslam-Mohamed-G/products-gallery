@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { dataContext } from '../Context/Context';
+import { dataContext } from '../../Context/Context';
 import { useNavigate } from 'react-router-dom';
-import ErrorPage from '../errorPage/errorPage';
+import ErrorPage from '../ErrorPage/ErrorPage';
+
 
 export default function Products() {
     const { getAllProducts, loading, errorMessage, filteredProducts, sortedProducts, setSortOption } = useContext(dataContext);

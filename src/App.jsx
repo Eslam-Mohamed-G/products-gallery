@@ -1,10 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
-import Layout from './components/Layout/Layout'
-import StoreContextProvider from './components/Context/Context'
-import Products from './components/Products/Products'
-import ProductDetails from './components/ProductDetails/ProductDetails'
-import NotFound from './components/NotFound/NotFound'
+import Layout from './Layout/Layout'
+import StoreContextProvider from './Context/Context'
+import Products from './pages/Products/Products'
+import ProductDetails from './pages/ProductDetails/ProductDetails'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
 

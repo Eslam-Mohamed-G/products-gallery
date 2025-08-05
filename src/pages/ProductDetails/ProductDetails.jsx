@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-import { dataContext } from '../Context/Context';
+import { dataContext } from '../../Context/Context';
 import { useParams } from 'react-router-dom';
-import ErrorPage from '../errorPage/errorPage';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 export default function ProductDetails() {
     const { id } = useParams();

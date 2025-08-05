@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { useEffect, useState } from 'react'
-import { dataContext } from '../Context/Context';
+import { dataContext } from '../../Context/Context';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
