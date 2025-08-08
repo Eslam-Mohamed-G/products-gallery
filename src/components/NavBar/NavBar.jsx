@@ -40,10 +40,10 @@ export default function NavBar() {
     }, [mode]);
 
     return (
-        <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 shadow">
+        <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 shadow transition-colors ease-in-out duration-1000">
             <div className="flex flex-wrap items-center justify-between py-4 ps-6 pr-2 md:pr-4 md:ps-8">
                 <Link to="/" onClick={() => setSearchTerm("")} className="flex items-center">
-                    <span className="text-lg sm:text-2xl font-bold dark:text-white uppercase">products</span>
+                    <span className="text-lg sm:text-2xl font-bold dark:text-white uppercase transition-colors ease-in-out duration-1000">products</span>
                 </Link>
 
                 <div className="flex items-center content-center">
