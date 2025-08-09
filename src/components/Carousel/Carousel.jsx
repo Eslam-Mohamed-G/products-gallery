@@ -29,7 +29,7 @@ export default function Carousel() {
     }, [current]);
 
     return (
-        <div className="relative w-full pt-5">
+        <div className="relative w-full mt-5 dark:bg-gray-900 rounded-2xl transition-colors ease-in-out duration-1000">
             {/* Carousel wrapper */}
             <div
                 className={`w-full h-full flex flex-col items-center justify-center text-center text-black text-lg transition-opacity ease-in-out duration-700 ${fade ? 'opacity-100' : 'opacity-0'}`}
@@ -54,9 +54,9 @@ export default function Carousel() {
             <button
                 onClick={prevSlide}
                 type="button"
-                className="absolute top-0 start-0 z-10 flex items-center justify-center h-full md:px-4 cursor-pointer group focus:outline-none"
+                className="absolute top-0 start-0 z-10 flex items-center justify-center h-full md:px-4 cursor-pointer group"
             >
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-700 group-hover:bg-gray-500 dark:group-hover:bg-gray-800 group-focus:ring-4 group-focus:ring-white">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-700 group-hover:bg-gray-500 dark:group-hover:bg-gray-800 shadow">
                     <svg className="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 1 1 5l4 4" />
                     </svg>
@@ -67,9 +67,9 @@ export default function Carousel() {
             <button
                 onClick={nextSlide}
                 type="button"
-                className="absolute top-0 end-0 z-10 flex items-center justify-center h-full md:px-4 cursor-pointer group focus:outline-none"
+                className="absolute top-0 end-0 z-10 flex items-center justify-center h-full md:px-4 cursor-pointer group"
             >
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-700 group-hover:bg-gray-500 dark:group-hover:bg-gray-800 group-focus:ring-4 group-focus:ring-white">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-700 group-hover:bg-gray-500 dark:group-hover:bg-gray-800 shadow">
                     <svg className="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 9 4-4-4-4" />
                     </svg>
