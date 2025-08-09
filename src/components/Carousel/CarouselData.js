@@ -1,4 +1,4 @@
-export const carouselContent = [
+export const carouselData = [
     {
         id: 3,
         title: "Mens Cotton Jacket",
