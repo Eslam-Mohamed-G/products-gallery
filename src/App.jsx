@@ -5,6 +5,7 @@ import StoreContextProvider from './Context/Context'
 import Products from './pages/Products/Products'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import NotFound from './pages/NotFound/NotFound'
+import Home from './pages/Home/Home'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
     {
       path: "/", element: <Layout />,
       children: [
-        { index: true, element: <Products /> },
+        { index: true, element: <Home /> },
+        { path: 'products', element: <Products /> },
         { path: '/:ProductDetails/:id', element: <ProductDetails /> },
         { path: '*', element: <NotFound /> },
       ]
