@@ -27,25 +27,28 @@ export default function Products() {
             {!loading && !errorMessage && (
                 <div className="">
                     {/* div for sort by name or price */}
-                    <div className="flex items-center justify-between border-b-1 border-gray-400 w-full px-2 md:px-4 py-3">
-                        <SearchInput/>
-                        <select
-                            onChange={(e) => setSortOption(e.target.value)}
-                            className="dark:text-white bg-gray-50 dark:bg-gray-700 text-gray-900 font-medium rounded-lg text-sm px-5 py-2.5"
-                        >
-                            <option value="" className='hidden'>Sort By Price:</option>
-                            <option value="price-low">Low to High</option>
-                            <option value="price-high">High to Low</option>
-                        </select>
+                    <div className="flex flex-col items-center justify-between gap-1 border-b-1 border-gray-400 w-full px-2 md:px-4 py-3">
+                        {/* search bar */}
+                        <SearchInput />
+                        <div className="flex w-full items-center justify-between gap-1">
+                            <select
+                                onChange={(e) => setSortOption(e.target.value)}
+                                className="dark:text-white bg-gray-50 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 text-gray-900 font-medium rounded-lg text-sm px-3 sm:px-5 py-2.5"
+                            >
+                                <option value="" className='hidden'>Sort By Price:</option>
+                                <option value="price-low">Low to High</option>
+                                <option value="price-high">High to Low</option>
+                            </select>
 
-                        <select
-                            onChange={(e) => setSortOption(e.target.value)}
-                            className="dark:text-white bg-gray-50 dark:bg-gray-700 text-gray-900 font-medium rounded-lg text-sm px-5 py-2.5"
-                        >
-                            <option value="" className='hidden'>Sort By Name:</option>
-                            <option value="name-az">A–Z</option>
-                            <option value="name-za">Z–A</option>
-                        </select>
+                            <select
+                                onChange={(e) => setSortOption(e.target.value)}
+                                className="dark:text-white bg-gray-50 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 text-gray-900 font-medium rounded-lg text-sm px-3 sm:px-5 py-2.5"
+                            >
+                                <option value="" className='hidden'>Sort By Name:</option>
+                                <option value="name-az">A–Z</option>
+                                <option value="name-za">Z–A</option>
+                            </select>
+                        </div>
                     </div>
                     <div className="flex flex-row flex-wrap justify-center">
                         {filteredProducts.length > 0 ?
@@ -61,7 +64,7 @@ export default function Products() {
                                                 <div className='flex items-center justify-center'>
                                                     <span
                                                         className="star-rating"
-                                                        style={{'--rating-percent': `${(product.rating.rate / 5) * 100}%`}}
+                                                        style={{ '--rating-percent': `${(product.rating.rate / 5) * 100}%` }}
                                                     >
                                                         ★★★★★
                                                     </span>
