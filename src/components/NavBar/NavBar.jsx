@@ -14,27 +14,22 @@ export default function NavBar() {
                 </Link>
 
 
-                <div className="flex items-center border-1">
-                    <ul className='flex flex-col sm:flex-row gap-4'>
+                <div className="flex items-center">
+                    <ul className='flex gap-4'>
                         <li>
-                            <Link to="/products" onClick={() => setSearchTerm("")} className="flex items-center">
-                                <span className="text-lg sm:text-xl font-bold dark:text-white capitalize transition-colors ease-in-out duration-1000">products</span>
-                            </Link>
+                            <NavLink to="/products" onClick={() => setSearchTerm("")} className="flex items-center">
+                                <span className="text-[16px] sm:text-xl font-bold dark:text-white capitalize transition-colors ease-in-out duration-1000">products</span>
+                            </NavLink>
                         </li>
                         <li>
                             <NavLink to='#'>
-                                <span className="text-lg sm:text-xl font-bold dark:text-white capitalize transition-colors ease-in-out duration-1000">category</span>
+                                <span className="text-[16px] sm:text-xl font-bold dark:text-white capitalize transition-colors ease-in-out duration-1000">category</span>
                             </NavLink>
                         </li>
                     </ul>
-                    <button className='sm:hidden cursor-pointer'>
-                        <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14">
-                            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z" />
-                        </svg>
-                    </button>
 
                     {/* button for dark mode */}
-                    <div className="relative overflow-hidden sm:px-1 border border-red-400">
+                    <div className="relative overflow-hidden sm:px-1">
                         <ButtomTheme />
                     </div>
                 </div>
