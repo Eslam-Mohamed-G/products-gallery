@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import { dataContext } from '../../Context/Context';
 import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import Carousel from '../../components/Carousel/Carousel';
 import Loading from '../../components/Loading/Loading';
 
 
@@ -26,7 +25,6 @@ export default function Products() {
 
             {!loading && !errorMessage && (
                 <div className="">
-                    <Carousel/>
                     {/* div for sort by name or price */}
                     <div className="flex items-center justify-between border-b-1 border-gray-400 w-full px-2 md:px-4 py-3">
                         <select
