@@ -3,6 +3,7 @@ import { dataContext } from '../../Context/Context';
 import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Loading from '../../components/Loading/Loading';
+import SearchInput from '../../components/SearchInput/SearchInput';
 
 
 export default function Products() {
@@ -27,6 +28,7 @@ export default function Products() {
                 <div className="">
                     {/* div for sort by name or price */}
                     <div className="flex items-center justify-between border-b-1 border-gray-400 w-full px-2 md:px-4 py-3">
+                        <SearchInput/>
                         <select
                             onChange={(e) => setSortOption(e.target.value)}
                             className="dark:text-white bg-gray-50 dark:bg-gray-700 text-gray-900 font-medium rounded-lg text-sm px-5 py-2.5"
