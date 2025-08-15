@@ -22,7 +22,7 @@ export default function NavBar() {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='#'>
+                            <NavLink to="/category">
                                 <span className="text-[16px] sm:text-xl font-bold dark:text-white capitalize transition-colors ease-in-out duration-1000">category</span>
                             </NavLink>
                         </li>

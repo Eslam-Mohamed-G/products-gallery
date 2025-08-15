@@ -6,6 +6,7 @@ import Products from './pages/Products/Products'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import NotFound from './pages/NotFound/NotFound'
 import Home from './pages/Home/Home'
+import Category from './pages/Category/Category'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: 'products', element: <Products /> },
+        { path: 'category', element: <Category /> },
         { path: '/:ProductDetails/:id', element: <ProductDetails /> },
         { path: '*', element: <NotFound /> },
       ]
