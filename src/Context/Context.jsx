@@ -65,7 +65,7 @@ export default function StoreContextProvider({ children }) {
     const [categoryName, setCategoryName] = useState("");
     const categoryFilteredProducts = products.filter( product => product.category.includes(categoryName))
     return (
-        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts, sortedProducts, setSortOption }}>
+        <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts, sortedProducts, setSortOption, setCategoryName, categoryFilteredProducts }}>
             {children}
         </dataContext.Provider>
     )
