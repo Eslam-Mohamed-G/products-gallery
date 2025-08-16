@@ -62,7 +62,7 @@ export default function Category() {
                         </div>
 
                         <div className="flex flex-wrap flex-row items-center justify-between gap-4 px-2 md:px-5 pb-5 w-full">
-                            <p className="text-lg md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white m-auto transition-colors ease-in-out duration-700">{item.category}</p>
+                            <p className="text-lg md:text-xl font-bold capitalize tracking-tight text-gray-900 dark:text-white m-auto transition-colors ease-in-out duration-700">{item.category}</p>
                             <button className="flex items-center justify-center capitalize text-white bg-gray-400 rounded-md px-4 py-2 m-auto transition-colors ease-in-out duration-700">
                                 more
                                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
