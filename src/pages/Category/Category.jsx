@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { dataContext } from '../../Context/Context';
 import Loading from '../../components/Loading/Loading';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const cardData = [
     {
@@ -81,6 +81,7 @@ export default function Category() {
                     </div>
                 </Link>
             ))}
+            <Outlet/>
         </div>
     )
 }

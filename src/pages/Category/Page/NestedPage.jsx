@@ -5,7 +5,7 @@ import MapContent from '../../../components/MapContent/MapContent';
 export default function NestedPage() {
   const { categoryFilteredProducts } = useContext(dataContext);
   return (
-    <div>
+    <div className='flex flex-row flex-wrap justify-center'>
       {categoryFilteredProducts.map(product => (
         <MapContent key={product.id} id={product.id} title={product.title} image={product.image} rate={product.rating.rate} price={product.price} />
       ))}
