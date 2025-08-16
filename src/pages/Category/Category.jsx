@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { dataContext } from '../../Context/Context';
 import Loading from '../../components/Loading/Loading';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import { Link } from 'react-router-dom';
 
 const cardData = [
     {
@@ -62,7 +63,7 @@ export default function Category() {
     return (
         <div className='flex flex-row flex-wrap justify-center px-4 pt-4'>
             {cardData.map((item) => (
-                <div className="w-1/2 lg:w-1/4 p-2 md:p-4" key={item.id}>
+                <Link className="w-1/2 lg:w-1/4 p-2 md:p-4" key={item.id} to={item.category}>
                     <div onClick={() => setCategoryName(item.category)} className="flex flex-col items-center justify-center h-64 md:h-96 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 cursor-pointer transition-colors ease-in-out duration-700">
                         <div className='w-full h-1/2 sm:h-2/3 m-auto bg-transparent px-4'>
                             <img className="object-contain w-full h-full" src={item.image} alt={item.category} />
@@ -78,7 +79,7 @@ export default function Category() {
                             </button>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
