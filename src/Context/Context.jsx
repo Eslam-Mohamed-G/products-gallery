@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
 
 export const dataContext = createContext();
 
@@ -62,8 +61,8 @@ export default function StoreContextProvider({ children }) {
     });
 
     // get products by category 
-    const [categoryName, setCategoryName] = useState("");
-    const categoryFilteredProducts = products.filter( product => product.category.includes(categoryName))
+    const [categoryName, setCategoryName] = useState([]);
+    const categoryFilteredProducts = products.filter( product => product.category === categoryName);
     return (
         <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts, sortedProducts, setSortOption, setCategoryName, categoryFilteredProducts }}>
             {children}
