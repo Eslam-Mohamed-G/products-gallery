@@ -60,6 +60,9 @@ export default function StoreContextProvider({ children }) {
         if (sortOption === "name-za") return b.title.localeCompare(a.title);
         return 0;
     });
+
+    // get products by category 
+    const categoryFilteredProducts = products.filter( product => product.category.includes(categoryName))
     return (
         <dataContext.Provider value={{ getAllProducts, loading, errorMessage, products, getProductDetails, productDetails, handleSearch, searchTerm, filteredProducts, sortedProducts, setSortOption }}>
             {children}
