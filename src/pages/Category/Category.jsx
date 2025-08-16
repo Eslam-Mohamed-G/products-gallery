@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { dataContext } from '../../Context/Context';
 import Loading from '../../components/Loading/Loading';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import { useNavigate } from 'react-router-dom';
 import { Link, Outlet } from 'react-router-dom';
 
 const cardData = [
@@ -56,8 +57,8 @@ const cardData = [
 ]
 
 export default function Category() {
-    const { setCategoryName, categoryFilteredProducts, loading, errorMessage } = useContext(dataContext);
-    console.log(categoryFilteredProducts);
+    const { setCategoryName, loading, errorMessage } = useContext(dataContext);
+    const navigate = useNavigate();
     if (loading) return <Loading SkeletonNumber={4} />;
     if (errorMessage) return <ErrorPage />;
     return (

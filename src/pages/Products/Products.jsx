@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { dataContext } from '../../Context/Context';
-import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Loading from '../../components/Loading/Loading';
 import SearchInput from '../../components/SearchInput/SearchInput';
@@ -9,7 +8,6 @@ import MapContent from '../../components/MapContent/MapContent';
 
 export default function Products() {
     const { getAllProducts, loading, errorMessage, filteredProducts, sortedProducts, setSortOption } = useContext(dataContext);
-    const navigate = useNavigate();
 
     useEffect(() => {
         getAllProducts();

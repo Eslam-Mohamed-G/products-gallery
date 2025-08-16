@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MapContent({ id, title, image, rate, price}) {
+    const navigate = useNavigate();
     return (
         <div className="w-1/2 md:w-1/3 lg:w-1/4 p-2 md:p-4">
             <div onClick={() => { navigate(`/${title.split(' ').slice(0, 3).join(" ")}/${id}`) }} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-80 md:h-96 pt-4 cursor-pointer">
