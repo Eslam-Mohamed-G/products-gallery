@@ -11,9 +11,6 @@ export default function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        getAllProducts();
-    }, []);
-    useEffect(() => {
         if (products.length > 0) {
             const shuffledProducts = [...products].sort(() => .5 - Math.random()).slice(0, 4);
             setRandomProducts(shuffledProducts);
