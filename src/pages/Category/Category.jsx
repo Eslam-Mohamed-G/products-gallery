@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { dataContext } from '../../Context/Context';
+import Loading from '../../components/Loading/Loading';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const cardData = [
     {
@@ -53,19 +55,21 @@ const cardData = [
 ]
 
 export default function Category() {
-    const { setCategoryName, categoryFilteredProducts } = useContext(dataContext);
+    const { setCategoryName, categoryFilteredProducts, loading, errorMessage } = useContext(dataContext);
     console.log(categoryFilteredProducts);
+    if (loading) return <Loading SkeletonNumber={4} />;
+    if (errorMessage) return <ErrorPage />;
     return (
         <div className='flex flex-row flex-wrap justify-center px-4 pt-4'>
             {cardData.map((item) => (
                 <div className="w-1/2 lg:w-1/4 p-2 md:p-4" key={item.id}>
-                    <div onClick={()=>setCategoryName(item.category)} className="flex flex-col items-center justify-center h-64 md:h-96 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 cursor-pointer transition-colors ease-in-out duration-700">
+                    <div onClick={() => setCategoryName(item.category)} className="flex flex-col items-center justify-center h-64 md:h-96 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 cursor-pointer transition-colors ease-in-out duration-700">
                         <div className='w-full h-1/2 sm:h-2/3 m-auto bg-transparent px-4'>
                             <img className="object-contain w-full h-full" src={item.image} alt={item.category} />
                         </div>
 
                         <div className="flex flex-wrap flex-row items-center justify-between gap-4 px-2 md:px-5 pb-5 w-full">
-                            <p className="text-lg md:text-xl font-bold capitalize tracking-tight text-gray-900 dark:text-white m-auto transition-colors ease-in-out duration-700">{item.category}</p>
+                            <p className="text-[14px] md:text-xl font-bold capitalize tracking-tight text-gray-900 dark:text-white m-auto transition-colors ease-in-out duration-700">{item.category}</p>
                             <button className="flex items-center justify-center capitalize text-white cursor-pointer bg-gray-400 rounded-md px-4 py-2 m-auto transition-colors ease-in-out duration-700">
                                 more
                                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
