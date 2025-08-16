@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { dataContext } from '../../Context/Context';
 import Loading from '../../components/Loading/Loading';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Link, Outlet } from 'react-router-dom';
 
 const cardData = [
@@ -58,12 +58,12 @@ const cardData = [
 
 export default function Category() {
     const { setCategoryName, loading, errorMessage } = useContext(dataContext);
-    const navigate = useNavigate();
+    const location  = useLocation();
     if (loading) return <Loading SkeletonNumber={4} />;
     if (errorMessage) return <ErrorPage />;
     return (
         <div className='flex flex-row flex-wrap justify-center px-4 pt-4'>
-            {cardData.map((item) => (
+            {location.pathname === "/category" && cardData.map((item) => (
                 <Link className="w-1/2 lg:w-1/4 p-2 md:p-4" key={item.id} to={item.category}>
                     <div onClick={() => setCategoryName(item.category)} className="flex flex-col items-center justify-center h-64 md:h-96 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 cursor-pointer transition-colors ease-in-out duration-700">
                         <div className='w-full h-1/2 sm:h-2/3 m-auto bg-transparent px-4'>
